@@ -7,6 +7,8 @@ import javax.persistence.Table;
 
 import org.springframework.security.core.GrantedAuthority;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import br.com.grapesoft.sgc.core.base.AppEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -24,11 +26,13 @@ import lombok.NoArgsConstructor;
 public class OperacaoSistema extends AppEntity<String> implements GrantedAuthority {
 	private static final long serialVersionUID = 2376242472099504627L;
 
+	
 	@Id
 	@Column(name = "cod_operacao")
 	@EqualsAndHashCode.Include
 	private String id;
-
+	
+	@JsonIgnore
 	@Override
 	public String getAuthority() {
 		return id;

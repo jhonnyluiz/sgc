@@ -13,6 +13,8 @@ import javax.persistence.Table;
 
 import org.springframework.security.core.GrantedAuthority;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import br.com.grapesoft.sgc.core.base.AppEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -39,6 +41,7 @@ public class Role extends AppEntity<String> implements GrantedAuthority {
 	@JoinTable(name = "roles_operacoes", schema = "security", joinColumns = @JoinColumn(name = "cod_role"), inverseJoinColumns = @JoinColumn(name = "cod_operacao"))
 	private List<OperacaoSistema> allowedOperations;
 
+	@JsonIgnore
 	@Override
 	public String getAuthority() {
 		return this.id;

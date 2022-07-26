@@ -14,8 +14,4 @@ import br.com.grapesoft.sgc.security.service.UsuarioService;
 @RequestMapping(PathResource.USUARIOS)
 public class UsuarioResource extends AppCrudResource<UsuarioService, UsuarioRepository, UsuarioDTO, Usuario, Long> {
 
-//	@GetMapping
-//	public ResponseEntity<List<Usuario>> listPage() {
-//		return ResponseEntity.ok(Arrays.asList(Usuario.builder().username("teste").build()));
-//	}
 }
